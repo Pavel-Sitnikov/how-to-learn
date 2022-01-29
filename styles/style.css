@@ -228,9 +228,6 @@ ul {
   margin-right: 0;
   margin-top: 80px;
 }
-.table__cell_theme_dark {
-  margin-top: 80px;
-}
 .kaufman-triangle {
   position: absolute;
   background-image: url(/images/kaufman-triangle.svg);
