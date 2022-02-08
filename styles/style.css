@@ -8,9 +8,6 @@
   /* выше для экранов больше 1600px отцентрировали весь контент */
   font-family: "Helvetica Neue", Arial, sans-serif;
 }
-ul {
-  padding-inline-start: 0;
-}
 
 .header {
   height: 100vh;
@@ -26,12 +23,12 @@ ul {
 
 .logo {
   width: 183px;
-  height: 32px;
   background-size: contain;
   background-repeat: no-repeat;
 }
 
-.logo__place-header {
+.logo_place_header {
+  height: 32px;
   top: 30px;
   left: 64px;
   position: absolute;
@@ -39,8 +36,8 @@ ul {
 }
 
 .header__title {
-  width: 730px;
-  padding-left: 64px;
+  max-width: 730px;
+  margin-left: 64px;
   font-size: 102px;
   line-height: 96px;
   font-weight: bold;
@@ -49,10 +46,12 @@ ul {
 }
 
 .header__subtitle {
-  width: 388px;
+  max-width: 388px;
   position: absolute;
   bottom: 30px;
   left: 64px;
+  line-height: 25px;
+  font-size: 18px;
   z-index: 2;
   margin: 0;
 }
@@ -68,7 +67,7 @@ ul {
   position: absolute;
   right: 0;
   bottom: 0;
-  z-index: 3;
+  z-index: 1;
 }
 
 /* ниже мы привели пример двух селекторов, чтобы вы вспомнили запись элемента */
@@ -81,9 +80,6 @@ ul {
   background-color: #2f80ed;
 }
 
-.content {
-}
-
 .description {
   display: flex;
   padding-top: 100px;
@@ -92,7 +88,6 @@ ul {
 .two-columns {
   width: 80%;
   display: flex;
-  position: relative;
   justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
@@ -110,7 +105,6 @@ ul {
 .two-columns__main-text {
   width: 80%;
   min-width: 784px;
-  display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
@@ -118,13 +112,11 @@ ul {
 .two-columns__paragraph {
   line-height: 34px;
   font-size: 24px;
-  font-weight: normal;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin: 0 0 30px;
 }
 
-.two-columns__paragraph:nth-child(odd) {
-  margin-top: 0;
+.two-columns__paragraph:last-of-type {
+  margin-bottom: 0;
 }
 
 .two-columns__span-accent {
@@ -135,7 +127,6 @@ ul {
 
 .digits {
   padding: 100px 0;
-  position: relative;
 }
 
 .section-title {
@@ -158,8 +149,8 @@ ul {
 .table {
   display: flex;
   flex-wrap: wrap;
-  position: relative;
   margin: 0 auto 0;
+  padding: 0;
   width: 1100px;
   justify-content: space-between;
   list-style: none;
@@ -185,16 +176,17 @@ ul {
 .table__text {
   line-height: 1.2;
   font-size: 18px;
-  margin: 20px 0 0;
+  margin: 20px 0;
+}
+
+.table__text:last-of-type {
+  margin-bottom: 0;
 }
 
 .feynman {
   min-height: 890px;
-  background-color: #f2f2f2;
-  background-image: url("../images/feynman.png");
+  background: no-repeat left bottom url("../images/feynman.png"), #f2f2f2;
   background-size: 857px 637px;
-  background-repeat: no-repeat;
-  background-position: left bottom;
   position: relative;
 }
 
@@ -230,28 +222,34 @@ ul {
   display: flex;
   position: relative;
   flex-wrap: wrap;
-  padding: 90px 0 90px;
+  padding: 90px 0;
   overflow: hidden;
-  color: white;
   background-color: #1f1f1f;
   z-index: 0;
 }
 
+.section-title_theme_dark {
+  color: #fff;
+}
+
+.section-subtitle_theme_dark {
+  color: #fff;
+}
+
 .table__cell_theme_dark {
   width: 200px;
-  color: white;
+  color: #fff;
   margin-right: 0;
   margin-top: 80px;
 }
 
-.kaufman-triangle {
-  position: absolute;
-  background-image: url("../images/kaufman-triangle.svg");
-  background-size: 877px 877px;
-  background-repeat: no-repeat;
-  right: -210px;
+.kaufman_triangle {
   height: 877px;
   width: 877px;
+  right: -210px;
+  position: absolute;
+  background: no-repeat url("../images/kaufman-triangle.svg");
+  background-size: 877px 877px;
   top: 0;
   z-index: -1;
 }
@@ -259,9 +257,8 @@ ul {
 .footer {
   min-height: 350px;
   background-color: #1f1f1f;
-  color: white;
+  color: #fff;
   display: flex;
-  position: relative;
   justify-content: center;
   padding-top: 60px;
   padding-bottom: 40px;
@@ -273,14 +270,14 @@ ul {
   justify-content: space-between;
 }
 
-.footer__column_content-copyright {
+.footer__column_content_copyright {
   flex-basis: 711px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.logo__place-footer {
+.logo__place_footer {
   height: 35px;
 }
 
@@ -288,10 +285,10 @@ ul {
   line-height: 25px;
   font-size: 18px;
   align-self: flex-start;
-  margin: 18px 0 18px;
+  margin: 18px 0;
 }
 
-.footer__column_content-info {
+.footer__column_content_info {
   display: flex;
   flex-direction: column;
 }
@@ -307,6 +304,7 @@ ul {
 .footer__column-links {
   list-style: none;
   margin: 0 0 16px;
+  padding: 0;
 }
 
 .footer__column-link {
@@ -316,7 +314,7 @@ ul {
   text-decoration: none;
 }
 
-.footer__column_content-social {
+.footer__column_content_social {
   display: flex;
   flex-direction: column;
 }
@@ -325,5 +323,4 @@ ul {
   width: 16px;
   min-height: 16px;
   padding-right: 10px;
-  background-size: contain;
 }
