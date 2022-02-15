@@ -1,9 +1,9 @@
 .header__title {
   max-width: 730px;
-  margin-left: 64px;
+  margin: 0 0 0 64px;
   font-size: 102px;
   line-height: 96px;
   font-weight: bold;
-  align-items: center;
-  z-index: 2;
+  z-index: 1;
+  /* Задаем z-index чтобы картинка не перекрывала надписи */
 }

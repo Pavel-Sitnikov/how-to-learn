@@ -6,10 +6,9 @@
   position: absolute;
   top: 50%;
   right: 48px;
+  transition: 0.3s ease-in;
 }
 
 .feynman__link:hover {
   opacity: 0.6;
-  transition-duration: 0.3s;
-  transition-timing-function: ease-in;
 }
